@@ -1,37 +1,41 @@
+public class import java.util.Scanner;
+
 public class FunWithCharacters {
 
-   static void main(String[] args) {
+
+   public String checkCharacter(String word, int index) {
+      char ch = word.charAt(index);
+
+      if (Character.isLetter(ch)) {
+         return "Character '" + ch + "' is a letter";
+      }
+      else if (Character.isDigit(ch)) {
+         return "Character '" + ch + "' is a digit";
+      }
+      else if (Character.isWhitespace(ch)) {
+         return "Character '" + ch + "' is a white space";
+      }
+      else {
+         return "Character '" + ch + "' is unknown";
+      }
+   }
+
+   public static void main(String[] args) {
 
       FunWithCharacters labObject = new FunWithCharacters();
       String word = "happy birthday"; // Set string
       int index = 2; // Set specified index to 2
       System.out.println(labObject.checkCharacter(word, index));
 
-      index = 5; // Set specified index to 2
+      index = 5; // Set specified index to 5
       System.out.println(labObject.checkCharacter(word, index));
 
       word = "happy birthday 2 you";
-      index = 15; // Set specified index to 2
+      index = 15; // Set specified index to 15
       System.out.println(labObject.checkCharacter(word, index));
 
       word = "happy birthday!";
-      index = 14; // Set specified index to 2
+      index = 14; // Set specified index to 14
       System.out.println(labObject.checkCharacter(word, index));
-   }
-   
-   public String checkCharacter(String word, int index) {
-      // Get the actual character at the requested index.
-      char c = word.charAt(index);
-
-      // Use methods from the Character class to discover which type of character it is.
-      if (Character.isLetter(c)) {
-         return "Character '" + c + "' is a letter";
-      } else if (Character.isWhitespace(c)) {
-         return "Character '" + c + "' is a white space";
-      } else if (Character.isDigit(c)) {
-         return "Character '" + c + "' is a digit";
-      } else {
-         return "Character '" + c + "' is unknown";
-      }
    }
 }
